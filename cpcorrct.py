@@ -25,7 +25,7 @@ else:
     #exibir os vinhos
     subtotal=total=0
     #prep msg final
-    msgfinal=f"dados da compra:\nAtendido por:{nomefunc}\nCliente:{nome}\nItens da compra\tValor\tQtde\tSubtotal\n"
+    msgfinal=f"dados da compra:\nAtendido por:{nomefunc}\nCliente:{nome}\nItens da compra\t\tValor\t\tQtde\tSubtotal\n"
     #repetindo a venda de vinhos
     continua="sim"
     while continua.lower()=="sim":
@@ -38,19 +38,19 @@ else:
         match vinho:
             case 1:
                 subtotal=15 *quant
-                msgfinal +=f"vinho suave tinto\tR$ 15.00\t{quant}\tR$ {subtotal:.2f}"
+                msgfinal +=f"vinho suave tinto\tR$ 15.00\t{quant}\tR$ {subtotal:.2f}\n"
             case 2:
                 subtotal=25 *quant
-                msgfinal +=f"vinho seco tinto\tR$ 25.00\t{quant}\tR$ {subtotal:.2f}"
+                msgfinal +=f"vinho seco tinto\tR$ 25.00\t{quant}\tR$ {subtotal:.2f}\n"
             case 3:
                 subtotal=35 *quant
-                msgfinal +=f"vinho suave branco\tR$ 35.00\t{quant}\tR$ {subtotal:.2f}"
+                msgfinal +=f"vinho suave branco\tR$ 35.00\t{quant}\tR$ {subtotal:.2f}\n"
             case 4:
                 subtotal=45 *quant
-                msgfinal +=f"vinho seco branco\tR$ 45.00\t{quant}\tR$ {subtotal:.2f}"
+                msgfinal +=f"vinho seco branco\tR$ 45.00\t{quant}\tR$ {subtotal:.2f}\n"
             case 5:
                 subtotal=20 *quant
-                msgfinal +=f"vinho sem alcool\tR$ 20.00\t{quant}\tR$ {subtotal:.2f}"
+                msgfinal +=f"vinho sem alcool\tR$ 20.00\t{quant}\tR$ {subtotal:.2f}\n"
             case _:
                 print("Escolha uma das opcoes por favor")
                 subtotal =0
@@ -61,3 +61,10 @@ else:
     #exibir as info finais 
     print(msgfinal)
     print(f'Total da compra: R${total:.2f}')
+    #verificando o frete
+    if total < 200: 
+        print("valor do frete: R$ 30.00")
+    else:
+        print("frete gratis!!!")
+#exibindo despedida
+print(f'{nome}, foi um prazer atende-lo, volte sempre :)')
